@@ -1,0 +1,1684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="theme-color"
+    content="#080b14"
+  >
+
+  <title>Nova Node • FakePixel AI</title>
+
+  <link
+    rel="stylesheet"
+    href="/style.css"
+  >
+</head>
+
+<body>
+
+  <div class="app-shell">
+
+    <!-- MOBILE OVERLAY -->
+    <div
+      id="sidebarOverlay"
+      class="sidebar-overlay"
+    ></div>
+
+    <!-- SIDEBAR -->
+    <aside id="sidebar" class="sidebar">
+
+      <div class="brand">
+
+        <div class="brand-logo">
+          N
+        </div>
+
+        <div class="brand-text">
+          <strong>NOVA NODE</strong>
+          <span>FakePixel AI</span>
+        </div>
+
+      </div>
+
+      <nav class="nav">
+
+        <button
+          class="nav-item active"
+          data-page="dashboard"
+        >
+          <span>⌂</span>
+          <span>Dashboard</span>
+        </button>
+
+        <button
+          class="nav-item"
+          data-page="minecraft"
+        >
+          <span>◈</span>
+          <span>Minecraft</span>
+        </button>
+
+        <button
+          class="nav-item"
+          data-page="inventory"
+        >
+          <span>▦</span>
+          <span>Inventory</span>
+        </button>
+
+        <button
+          class="nav-item"
+          data-page="builder"
+        >
+          <span>▧</span>
+          <span>Builder</span>
+        </button>
+
+        <button
+          class="nav-item"
+          data-page="ai"
+        >
+          <span>✦</span>
+          <span>AI Control</span>
+        </button>
+
+        <button
+          class="nav-item"
+          data-page="console"
+        >
+          <span>⌘</span>
+          <span>Console</span>
+        </button>
+
+        <button
+          class="nav-item"
+          data-page="settings"
+        >
+          <span>⚙</span>
+          <span>Settings</span>
+        </button>
+
+      </nav>
+
+      <div class="sidebar-bottom">
+
+        <div class="connection-mini">
+
+          <span
+            id="sideStatusDot"
+            class="status-dot offline"
+          ></span>
+
+          <div>
+            <strong id="sideStatusText">
+              Offline
+            </strong>
+
+            <small>
+              Minecraft connection
+            </small>
+          </div>
+
+        </div>
+
+      </div>
+
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main">
+
+      <!-- TOPBAR -->
+      <header class="topbar">
+
+        <button
+          id="mobileMenuBtn"
+          class="mobile-menu"
+          type="button"
+          aria-label="Open menu"
+        >
+          ☰
+        </button>
+
+        <div class="topbar-title">
+
+          <h1 id="pageTitle">
+            Dashboard
+          </h1>
+
+          <span id="pageSubtitle">
+            FakePixel SkyBlock control center
+          </span>
+
+        </div>
+
+        <div class="topbar-actions">
+
+          <div class="target-pill">
+            <span>Target</span>
+            <strong id="topTarget">
+              V_Mallu_Gamer
+            </strong>
+          </div>
+
+          <div
+            id="topStatus"
+            class="top-status offline"
+          >
+            <span class="status-dot"></span>
+            <span id="topStatusText">
+              Offline
+            </span>
+          </div>
+
+        </div>
+
+      </header>
+
+      <!-- CONTENT -->
+      <div class="content">
+
+        <!-- =========================================
+             DASHBOARD
+        ========================================== -->
+        <section
+          id="page-dashboard"
+          class="page active"
+        >
+
+          <div class="hero-card">
+
+            <div class="hero-content">
+
+              <div class="eyebrow">
+                <span class="pulse"></span>
+                ONE BOT CONTROL
+              </div>
+
+              <h2>
+                FakePixel
+                <span>AI SkyBlock</span>
+              </h2>
+
+              <p>
+                Control your Minecraft 1.8.9 bot,
+                automate SkyBlock tasks, manage inventory,
+                build schematics and use AI planning.
+              </p>
+
+              <div class="hero-buttons">
+
+                <button
+                  id="dashboardReconnect"
+                  class="btn primary"
+                >
+                  ↻ Reconnect Bot
+                </button>
+
+                <button
+                  id="dashboardVisit"
+                  class="btn secondary"
+                >
+                  Visit Island
+                </button>
+
+              </div>
+
+            </div>
+
+            <div class="hero-orb">
+              <div class="orb-ring"></div>
+              <div class="orb-core">
+                N
+              </div>
+            </div>
+
+          </div>
+
+          <!-- STATS -->
+          <div class="stats-grid">
+
+            <div class="stat-card">
+
+              <div class="stat-icon">
+                ◉
+              </div>
+
+              <div>
+                <span>Bot Status</span>
+                <strong id="dashBotStatus">
+                  Offline
+                </strong>
+              </div>
+
+            </div>
+
+            <div class="stat-card">
+
+              <div class="stat-icon">
+                ◇
+              </div>
+
+              <div>
+                <span>Target</span>
+                <strong id="dashTarget">
+                  V_Mallu_Gamer
+                </strong>
+              </div>
+
+            </div>
+
+            <div class="stat-card">
+
+              <div class="stat-icon">
+                ✦
+              </div>
+
+              <div>
+                <span>AI Model</span>
+                <strong id="dashAiModel">
+                  Loading...
+                </strong>
+              </div>
+
+            </div>
+
+            <div class="stat-card">
+
+              <div class="stat-icon">
+                ☁
+              </div>
+
+              <div>
+                <span>Flight</span>
+                <strong id="dashFlight">
+                  Inactive
+                </strong>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="dashboard-grid">
+
+            <!-- BOT CARD -->
+            <div class="panel-card">
+
+              <div class="panel-header">
+
+                <div>
+                  <h3>Bot Overview</h3>
+                  <p>Current Minecraft session</p>
+                </div>
+
+                <span
+                  id="dashOnlineBadge"
+                  class="badge offline"
+                >
+                  Offline
+                </span>
+
+              </div>
+
+              <div class="overview-list">
+
+                <div class="overview-row">
+                  <span>Username</span>
+                  <strong id="dashUsername">—</strong>
+                </div>
+
+                <div class="overview-row">
+                  <span>Server</span>
+                  <strong id="dashServer">
+                    mc.fakepixel.me
+                  </strong>
+                </div>
+
+                <div class="overview-row">
+                  <span>Version</span>
+                  <strong>1.8.9</strong>
+                </div>
+
+                <div class="overview-row">
+                  <span>Position</span>
+                  <strong id="dashPosition">—</strong>
+                </div>
+
+                <div class="overview-row">
+                  <span>Dimension</span>
+                  <strong id="dashDimension">—</strong>
+                </div>
+
+              </div>
+
+            </div>
+
+            <!-- CAMERA ROTATION -->
+            <div class="panel-card">
+              <div class="panel-header">
+                <div>
+                  <h3>Camera Rotation</h3>
+                  <p>Turn the bot's facing direction</p>
+                </div>
+              </div>
+              <div class="button-row">
+                <button id="rotateLeftBtn" class="btn secondary">↶ Left</button>
+                <button id="rotateRightBtn" class="btn secondary">↷ Right</button>
+                <button id="lookUpBtn" class="btn secondary">↑ Up</button>
+                <button id="lookDownBtn" class="btn secondary">↓ Down</button>
+              </div>
+            </div>
+
+            <!-- REQUESTS -->
+            <div class="panel-card request-control-card">
+
+              <div class="panel-header">
+
+                <div>
+                  <h3>Requests</h3>
+                  <p>Co-op and trade request controls</p>
+                </div>
+
+                <span id="requestBadge" class="badge">None</span>
+
+              </div>
+
+              <div class="overview-list">
+                <div class="overview-row">
+                  <span>Detected</span>
+                  <strong id="requestType">None</strong>
+                </div>
+                <div class="overview-row">
+                  <span>From</span>
+                  <strong id="requestFrom">—</strong>
+                </div>
+              </div>
+
+              <div class="button-row">
+                <button id="acceptCoopRequest" class="btn primary">Accept Co-op</button>
+                <button id="acceptTradeRequest" class="btn secondary">Accept Trade / Deal</button>
+              </div>
+
+              <button id="acceptCurrentRequest" class="btn secondary full">Accept Current Request</button>
+
+              <div class="settings-warning" id="requestActionStatus">
+                Waiting for a co-op or trade request.
+              </div>
+
+            </div>
+
+            <!-- AUTOMATION -->
+            <div class="panel-card">
+
+              <div class="panel-header">
+
+                <div>
+                  <h3>Automation</h3>
+                  <p>Quick bot controls</p>
+                </div>
+
+              </div>
+
+              <div class="toggle-list">
+
+                <label class="toggle-row">
+
+                  <div>
+                    <strong>Auto SkyBlock</strong>
+                    <small>
+                      Automatically enter SkyBlock
+                    </small>
+                  </div>
+
+                  <input
+                    id="toggleAutoSkyblock"
+                    type="checkbox"
+                  >
+
+                  <span class="switch"></span>
+
+                </label>
+
+                <label class="toggle-row">
+
+                  <div>
+                    <strong>Auto Visit</strong>
+                    <small>
+                      Visit target island automatically
+                    </small>
+                  </div>
+
+                  <input
+                    id="toggleAutoVisit"
+                    type="checkbox"
+                  >
+
+                  <span class="switch"></span>
+
+                </label>
+
+                <label class="toggle-row">
+
+                  <div>
+                    <strong>Anti-AFK</strong>
+                    <small>
+                      Small movement while idle
+                    </small>
+                  </div>
+
+                  <input
+                    id="toggleAntiAfk"
+                    type="checkbox"
+                  >
+
+                  <span class="switch"></span>
+
+                </label>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </section>
+
+
+        <!-- =========================================
+             MINECRAFT
+        ========================================== -->
+        <section
+          id="page-minecraft"
+          class="page"
+        >
+
+          <div class="section-heading">
+
+            <div>
+              <h2>Minecraft Control</h2>
+              <p>
+                Control movement, camera and server commands.
+              </p>
+            </div>
+
+            <button
+              id="minecraftStop"
+              class="btn danger"
+            >
+              ■ Stop Movement
+            </button>
+
+          </div>
+
+          <div class="minecraft-grid">
+
+            <!-- WORLD -->
+            <div class="panel-card world-card">
+
+              <div class="panel-header">
+
+                <div>
+                  <h3>World State</h3>
+                  <p>Live Minecraft information</p>
+                </div>
+
+                <button
+                  id="refreshWorld"
+                  class="icon-btn"
+                  title="Refresh"
+                >
+                  ↻
+                </button>
+
+              </div>
+
+              <div class="world-info">
+
+                <div class="world-value">
+                  <span>X</span>
+                  <strong id="worldX">—</strong>
+                </div>
+
+                <div class="world-value">
+                  <span>Y</span>
+                  <strong id="worldY">—</strong>
+                </div>
+
+                <div class="world-value">
+                  <span>Z</span>
+                  <strong id="worldZ">—</strong>
+                </div>
+
+              </div>
+
+              <div class="overview-list">
+
+                <div class="overview-row">
+                  <span>Dimension</span>
+                  <strong id="worldDimension">—</strong>
+                </div>
+
+                <div class="overview-row">
+                  <span>Health</span>
+                  <strong id="worldHealth">—</strong>
+                </div>
+
+                <div class="overview-row">
+                  <span>Food</span>
+                  <strong id="worldFood">—</strong>
+                </div>
+
+              </div>
+
+            </div>
+
+            <!-- MOVE -->
+            <div class="panel-card">
+
+              <div class="panel-header">
+
+                <div>
+                  <h3>Move Bot</h3>
+                  <p>Navigate to coordinates</p>
+                </div>
+
+              </div>
+
+              <div class="form-grid three">
+
+                <label>
+                  <span>X</span>
+                  <input
+                    id="moveX"
+                    type="number"
+                    placeholder="0"
+                  >
+                </label>
+
+                <label>
+                  <span>Y</span>
+                  <input
+                    id="moveY"
+                    type="number"
+                    placeholder="70"
+                  >
+                </label>
+
+                <label>
+                  <span>Z</span>
+                  <input
+                    id="moveZ"
+                    type="number"
+                    placeholder="0"
+                  >
+                </label>
+
+              </div>
+
+              <div class="form-row">
+
+                <label>
+                  <span>Range</span>
+                  <input
+                    id="moveRange"
+                    type="number"
+                    value="2"
+                    min="1"
+                    max="20"
+                  >
+                </label>
+
+                <button
+                  id="moveBtn"
+                  class="btn primary"
+                >
+                  Move
+                </button>
+
+              </div>
+
+            </div>
+
+            <!-- SKYBLOCK QUICK ACTIONS -->
+            <div class="panel-card">
+
+              <div class="panel-header">
+                <div>
+                  <h3>SkyBlock Automation</h3>
+                  <p>Use the known FakePixel Hub NPC coordinates</p>
+                </div>
+              </div>
+
+              <div class="button-row">
+                <button id="goSkyblockNpcBtn" class="btn primary">Go to SkyBlock NPC</button>
+                <button id="lookNpcBtn" class="btn secondary">Look at NPC</button>
+                <button id="rightClickNpcBtn" class="btn secondary">Right-click NPC</button>
+                <button id="selectSlot3Btn" class="btn secondary">Select Slot 3</button>
+                <button id="visitTargetBtn" class="btn secondary">Visit Target</button>
+              </div>
+
+              <div class="settings-warning">
+                NPC: -25.257, 93, -1.490 · Hub: -2.500, 70.0625, -68
+              </div>
+
+            </div>
+
+            <!-- LOOK -->
+            <div class="panel-card">
+
+              <div class="panel-header">
+
+                <div>
+                  <h3>Look At</h3>
+                  <p>Rotate the bot camera</p>
+                </div>
+
+              </div>
+
+              <div class="form-grid three">
+
+                <label>
+                  <span>X</span>
+                  <input
+                    id="lookX"
+                    type="number"
+                    placeholder="0"
+                  >
+                </label>
+
+                <label>
+                  <span>Y</span>
+                  <input
+                    id="lookY"
+                    type="number"
+                    placeholder="70"
+                  >
+                </label>
+
+                <label>
+                  <span>Z</span>
+                  <input
+                    id="lookZ"
+                    type="number"
+                    placeholder="0"
+                  >
+                </label>
+
+              </div>
+
+              <button
+                id="lookBtn"
+                class="btn secondary full"
+              >
+                Look At Coordinates
+              </button>
+
+            </div>
+
+            <!-- ENTITIES -->
+            <div class="panel-card entities-card">
+
+              <div class="panel-header">
+
+                <div>
+                  <h3>Nearby Entities</h3>
+                  <p>Entities around the bot</p>
+                </div>
+
+                <button
+                  id="refreshEntities"
+                  class="icon-btn"
+                >
+                  ↻
+                </button>
+
+              </div>
+
+              <div
+                id="entitiesList"
+                class="entity-list"
+              >
+                <div class="empty-state">
+                  No entity data
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+        </section>
+
+
+        <!-- =========================================
+             INVENTORY
+        ========================================== -->
+        <section
+          id="page-inventory"
+          class="page"
+        >
+
+          <div class="section-heading">
+
+            <div>
+              <h2>Inventory</h2>
+              <p>
+                Full bot inventory with stack information.
+              </p>
+            </div>
+
+            <button
+              id="refreshInventory"
+              class="btn secondary"
+            >
+              ↻ Refresh
+            </button>
+
+          </div>
+
+          <div class="inventory-summary">
+
+            <div class="mini-stat">
+              <span>Used Slots</span>
+              <strong id="inventoryUsed">0</strong>
+            </div>
+
+            <div class="mini-stat">
+              <span>Empty Slots</span>
+              <strong id="inventoryEmpty">0</strong>
+            </div>
+
+            <div class="mini-stat">
+              <span>Full Stacks</span>
+              <strong id="inventoryFull">0</strong>
+            </div>
+
+            <div class="mini-stat">
+              <span>Partial Stacks</span>
+              <strong id="inventoryPartial">0</strong>
+            </div>
+
+          </div>
+
+          <div class="panel-card">
+
+            <div class="panel-header">
+
+              <div>
+                <h3>Item Slots</h3>
+                <p>
+                  Empty, partial and full stacks are shown separately.
+                </p>
+              </div>
+
+            </div>
+
+            <div
+              id="inventoryGrid"
+              class="inventory-grid"
+            >
+              <div class="empty-state">
+                Inventory unavailable
+              </div>
+            </div>
+
+          </div>
+
+          <div class="dashboard-grid">
+
+            <!-- SOUP -->
+            <div class="panel-card">
+
+              <div class="panel-header">
+
+                <div>
+                  <h3>Mystical Mushroom Soup</h3>
+                  <p>Soup and flight controls</p>
+                </div>
+
+                <span
+                  id="soupBadge"
+                  class="badge"
+                >
+                  Not Found
+                </span>
+
+              </div>
+
+              <div class="soup-info">
+
+                <div>
+                  <span>Available</span>
+                  <strong id="soupCount">
+                    0
+                  </strong>
+                </div>
+
+                <div>
+                  <span>Flight</span>
+                  <strong id="soupFlightState">
+                    Inactive
+                  </strong>
+                </div>
+
+              </div>
+
+              <div class="button-row">
+
+                <button
+                  id="consumeSoup"
+                  class="btn primary"
+                >
+                  Consume Soup
+                </button>
+
+                <button
+                  id="autoSoupBtn"
+                  class="btn secondary"
+                >
+                  Auto Soup
+                </button>
+
+              </div>
+
+            </div>
+
+            <!-- FLIGHT -->
+            <div class="panel-card">
+
+              <div class="panel-header">
+
+                <div>
+                  <h3>Flight</h3>
+                  <p>
+                    Server-permitted flight state
+                  </p>
+                </div>
+
+                <span
+                  id="flightBadge"
+                  class="badge"
+                >
+                  Inactive
+                </span>
+
+              </div>
+
+              <div class="flight-status">
+
+                <div
+                  id="flightIcon"
+                  class="flight-icon"
+                >
+                  ✈
+                </div>
+
+                <div>
+                  <strong id="flightText">
+                    Flight inactive
+                  </strong>
+
+                  <small id="flightSubtext">
+                    Consume Mystical Mushroom Soup
+                    when available.
+                  </small>
+                </div>
+
+              </div>
+
+              <button
+                id="flightToggle"
+                class="btn secondary full"
+              >
+                Request Flight State
+              </button>
+
+            </div>
+
+          </div>
+
+        </section>
+
+
+        <!-- =========================================
+             BUILDER
+        ========================================== -->
+        <section
+          id="page-builder"
+          class="page"
+        >
+
+          <div class="section-heading">
+
+            <div>
+              <h2>Schematic Builder</h2>
+              <p>
+                Upload and build persistent .schem or .schematic files.
+              </p>
+            </div>
+
+            <label class="btn primary upload-btn">
+              + Upload Schematic
+              <input
+                id="schematicUpload"
+                type="file"
+                accept=".schem,.schematic"
+                hidden
+              >
+            </label>
+
+          </div>
+
+          <div class="builder-grid">
+
+            <!-- FILES -->
+            <div class="panel-card">
+
+              <div class="panel-header">
+
+                <div>
+                  <h3>Schematics</h3>
+                  <p>
+                    Stored in persistent storage.
+                  </p>
+                </div>
+
+                <button
+                  id="refreshSchematics"
+                  class="icon-btn"
+                >
+                  ↻
+                </button>
+
+              </div>
+
+              <div
+                id="schematicList"
+                class="schematic-list"
+              >
+                <div class="empty-state">
+                  No schematics uploaded
+                </div>
+              </div>
+
+            </div>
+
+            <!-- BUILD -->
+            <div class="panel-card">
+
+              <div class="panel-header">
+
+                <div>
+                  <h3>Build Controls</h3>
+                  <p>
+                    Place the selected schematic at coordinates.
+                  </p>
+                </div>
+
+                <span
+                  id="buildBadge"
+                  class="badge"
+                >
+                  Idle
+                </span>
+
+              </div>
+
+              <label class="select-label">
+                <span>Schematic</span>
+
+                <select id="buildSchematic">
+                  <option value="">
+                    Select schematic
+                  </option>
+                </select>
+              </label>
+
+              <div class="form-grid three">
+
+                <label>
+                  <span>X</span>
+                  <input
+                    id="buildX"
+                    type="number"
+                    value="0"
+                  >
+                </label>
+
+                <label>
+                  <span>Y</span>
+                  <input
+                    id="buildY"
+                    type="number"
+                    value="70"
+                  >
+                </label>
+
+                <label>
+                  <span>Z</span>
+                  <input
+                    id="buildZ"
+                    type="number"
+                    value="0"
+                  >
+                </label>
+
+              </div>
+
+              <label class="select-label">
+                <span>Structure Rotation</span>
+                <select id="buildRotation">
+                  <option value="0">0°</option>
+                  <option value="90">90°</option>
+                  <option value="180">180°</option>
+                  <option value="270">270°</option>
+                </select>
+              </label>
+
+              <div class="build-progress">
+
+                <div class="progress-header">
+                  <span>Progress</span>
+                  <strong id="buildPercent">
+                    0%
+                  </strong>
+                </div>
+
+                <div class="progress-track">
+                  <div
+                    id="buildProgress"
+                    class="progress-bar"
+                    style="width:0%"
+                  ></div>
+                </div>
+
+                <div class="progress-meta">
+                  <span id="buildPlaced">
+                    0 placed
+                  </span>
+
+                  <span id="buildTotal">
+                    0 blocks
+                  </span>
+                </div>
+
+              </div>
+
+              <div class="button-row wrap">
+
+                <button
+                  id="buildStart"
+                  class="btn primary"
+                >
+                  Start
+                </button>
+
+                <button
+                  id="buildPause"
+                  class="btn secondary"
+                >
+                  Pause
+                </button>
+
+                <button
+                  id="buildResume"
+                  class="btn secondary"
+                >
+                  Resume
+                </button>
+
+                <button
+                  id="buildStop"
+                  class="btn danger"
+                >
+                  Stop
+                </button>
+
+                <button
+                  id="buildReset"
+                  class="btn ghost"
+                >
+                  Reset
+                </button>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="panel-card">
+
+            <div class="panel-header">
+
+              <div>
+                <h3>Build Activity</h3>
+                <p>Current builder information</p>
+              </div>
+
+            </div>
+
+            <div
+              id="buildActivity"
+              class="activity-box"
+            >
+              Builder idle.
+            </div>
+
+          </div>
+
+        </section>
+
+
+        <!-- =========================================
+             AI
+        ========================================== -->
+        <section
+          id="page-ai"
+          class="page"
+        >
+
+          <div class="ai-hero panel-card">
+
+            <div class="ai-symbol">
+              ✦
+            </div>
+
+            <div>
+
+              <div class="eyebrow">
+                XKIRO AI
+              </div>
+
+              <h2>
+                Intelligent SkyBlock Control
+              </h2>
+
+              <p>
+                AI handles high-level planning and GUI decisions.
+                Minecraft actions remain controlled by the bot.
+              </p>
+
+            </div>
+
+            <div class="ai-status-box">
+
+              <span
+                id="aiStatusDot"
+                class="status-dot offline"
+              ></span>
+
+              <div>
+                <strong id="aiStatus">
+                  Checking...
+                </strong>
+
+                <small id="aiModel">
+                  —
+                </small>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="dashboard-grid">
+
+            <!-- VISIT -->
+            <div class="panel-card">
+
+              <div class="panel-header">
+
+                <div>
+                  <h3>AI Visit</h3>
+                  <p>
+                    Open the visit GUI and locate the target.
+                  </p>
+                </div>
+
+              </div>
+
+              <div class="target-editor">
+
+                <label>
+                  <span>Target Username</span>
+
+                  <input
+                    id="targetUsername"
+                    type="text"
+                    value="V_Mallu_Gamer"
+                    placeholder="Minecraft username"
+                  >
+                </label>
+
+                <button
+                  id="saveTarget"
+                  class="btn secondary"
+                >
+                  Save Target
+                </button>
+
+              </div>
+
+              <button
+                id="aiVisit"
+                class="btn primary full"
+              >
+                ✦ Start AI Visit
+              </button>
+
+            </div>
+
+            <!-- AI BUILD -->
+            <div class="panel-card">
+
+              <div class="panel-header">
+
+                <div>
+                  <h3>AI Build Planner</h3>
+                  <p>
+                    Create a high-level building plan.
+                  </p>
+                </div>
+
+              </div>
+
+              <div class="ai-note">
+                AI planning does not individually control every
+                block placement. The local builder handles
+                placement for speed.
+              </div>
+
+              <button
+                id="aiBuildPlan"
+                class="btn secondary full"
+              >
+                Generate Build Plan
+              </button>
+
+              <pre
+                id="aiPlanOutput"
+                class="code-output"
+              >No plan generated.</pre>
+
+            </div>
+
+          </div>
+
+        </section>
+
+
+        <!-- =========================================
+             CONSOLE
+        ========================================== -->
+        <section
+          id="page-console"
+          class="page"
+        >
+
+          <div class="section-heading">
+
+            <div>
+              <h2>Live Console</h2>
+              <p>
+                Minecraft chat and bot logs.
+              </p>
+            </div>
+
+            <button
+              id="clearConsole"
+              class="btn ghost"
+            >
+              Clear View
+            </button>
+
+          </div>
+
+          <div class="console-card">
+
+            <div class="console-toolbar">
+
+              <span class="console-live">
+                <span class="pulse"></span>
+                LIVE
+              </span>
+
+              <span id="consoleCount">
+                0 messages
+              </span>
+
+            </div>
+
+            <div
+              id="consoleOutput"
+              class="console-output"
+            >
+              <div class="console-line system">
+                Waiting for bot logs...
+              </div>
+            </div>
+
+          </div>
+
+          <div class="console-input-card">
+
+            <div class="command-tabs">
+
+              <button
+                class="command-tab active"
+                data-command-mode="chat"
+              >
+                Chat
+              </button>
+
+              <button
+                class="command-tab"
+                data-command-mode="command"
+              >
+                Command
+              </button>
+
+            </div>
+
+            <div class="console-input-row">
+
+              <input
+                id="consoleInput"
+                type="text"
+                placeholder="Send Minecraft chat..."
+                autocomplete="off"
+              >
+
+              <button
+                id="consoleSend"
+                class="btn primary"
+              >
+                Send
+              </button>
+
+            </div>
+
+            <small>
+              Press Enter to send.
+            </small>
+
+          </div>
+
+        </section>
+
+
+        <!-- =========================================
+             SETTINGS
+        ========================================== -->
+        <section
+          id="page-settings"
+          class="page"
+        >
+
+          <div class="section-heading">
+
+            <div>
+              <h2>Settings</h2>
+              <p>
+                Configure bot automation and behavior.
+              </p>
+            </div>
+
+            <button
+              id="saveSettings"
+              class="btn primary"
+            >
+              Save Settings
+            </button>
+
+          </div>
+
+          <div class="settings-grid">
+
+            <div class="panel-card">
+
+              <div class="panel-header">
+
+                <div>
+                  <h3>Automation</h3>
+                  <p>Automatic Minecraft actions</p>
+                </div>
+
+              </div>
+
+              <div class="toggle-list">
+
+                <label class="toggle-row">
+
+                  <div>
+                    <strong>Auto SkyBlock</strong>
+                    <small>
+                      Enter SkyBlock after login
+                    </small>
+                  </div>
+
+                  <input
+                    id="settingAutoSkyblock"
+                    type="checkbox"
+                  >
+
+                  <span class="switch"></span>
+
+                </label>
+
+                <label class="toggle-row">
+
+                  <div>
+                    <strong>Auto Visit</strong>
+                    <small>
+                      Visit the configured target
+                    </small>
+                  </div>
+
+                  <input
+                    id="settingAutoVisit"
+                    type="checkbox"
+                  >
+
+                  <span class="switch"></span>
+
+                </label>
+
+                <label class="toggle-row">
+
+                  <div>
+                    <strong>Anti-AFK</strong>
+                    <small>
+                      Perform harmless periodic movement
+                    </small>
+                  </div>
+
+                  <input
+                    id="settingAntiAfk"
+                    type="checkbox"
+                  >
+
+                  <span class="switch"></span>
+
+                </label>
+
+                <label class="toggle-row">
+
+                  <div>
+                    <strong>Auto Soup</strong>
+                    <small>
+                      Consume soup when enabled
+                    </small>
+                  </div>
+
+                  <input
+                    id="settingAutoSoup"
+                    type="checkbox"
+                  >
+
+                  <span class="switch"></span>
+
+                </label>
+
+              </div>
+
+            </div>
+
+
+            <div class="panel-card">
+
+              <div class="panel-header">
+
+                <div>
+                  <h3>Requests</h3>
+                  <p>Automatic interaction handling</p>
+                </div>
+
+              </div>
+
+              <div class="toggle-list">
+
+                <label class="toggle-row">
+
+                  <div>
+                    <strong>Auto Co-op Accept</strong>
+                    <small>
+                      Accept detected co-op requests
+                    </small>
+                  </div>
+
+                  <input
+                    id="settingAutoCoopAccept"
+                    type="checkbox"
+                  >
+
+                  <span class="switch"></span>
+
+                </label>
+
+                <label class="toggle-row">
+
+                  <div>
+                    <strong>Auto Trade Accept</strong>
+                    <small>
+                      Accept detected trade requests
+                    </small>
+                  </div>
+
+                  <input
+                    id="settingAutoTradeAccept"
+                    type="checkbox"
+                  >
+
+                  <span class="switch"></span>
+
+                </label>
+
+              </div>
+
+            </div>
+
+
+            <div class="panel-card">
+
+              <div class="panel-header">
+
+                <div>
+                  <h3>Connection</h3>
+                  <p>Minecraft server configuration</p>
+                </div>
+
+              </div>
+
+              <div class="overview-list">
+
+                <div class="overview-row">
+                  <span>Server</span>
+                  <strong>
+                    mc.fakepixel.me
+                  </strong>
+                </div>
+
+                <div class="overview-row">
+                  <span>Version</span>
+                  <strong>
+                    1.8.9
+                  </strong>
+                </div>
+
+                <div class="overview-row">
+                  <span>Authentication</span>
+                  <strong>
+                    Offline
+                  </strong>
+                </div>
+
+              </div>
+
+              <div class="settings-warning">
+                Minecraft credentials are loaded from environment
+                variables and are not displayed in the dashboard.
+              </div>
+
+            </div>
+
+
+            <div class="panel-card">
+
+              <div class="panel-header">
+
+                <div>
+                  <h3>Storage</h3>
+                  <p>Persistent application data</p>
+                </div>
+
+              </div>
+
+              <div class="overview-list">
+
+                <div class="overview-row">
+                  <span>Data directory</span>
+                  <strong id="dataDir">
+                    —
+                  </strong>
+                </div>
+
+                <div class="overview-row">
+                  <span>Schematics</span>
+                  <strong id="schematicDir">
+                    —
+                  </strong>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </section>
+
+      </div>
+
+    </main>
+
+  </div>
+
+  <!-- TOAST -->
+  <div
+    id="toastContainer"
+    class="toast-container"
+  ></div>
+
+  <script src="/app.js"></script>
+
+</body>
+</html>
