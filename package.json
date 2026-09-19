@@ -1,0 +1,22 @@
+{
+  "name": "fakepixel-ai-skyblock-bot",
+  "version": "2.0.0",
+  "description": "FakePixel 1.8.9 SkyBlock AI bot with web dashboard, schematic builder, inventory controls and island automation",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.2",
+    "express": "^5.1.0",
+    "minecraft-data": "^3.97.0",
+    "mineflayer": "^4.31.0",
+    "mineflayer-pathfinder": "^2.4.5",
+    "openai": "^5.19.1",
+    "prismarine-nbt": "^2.7.0",
+    "vec3": "^0.1.10"
+  }
+}
